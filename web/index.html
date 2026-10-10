@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aplikasi Penilaian Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Komponen 1: Judul (heading) -->
+    <h1>PENILAIAN MAHASISWA</h1>
+
+    <form id="formNilai" novalidate>
+      <fieldset>
+        <legend>Input Data</legend>
+
+        <!-- Komponen 2: Input teks -->
+        <label for="nama">Nama Mahasiswa</label>
+        <input type="text" id="nama" placeholder="Contoh: Ari Wirayuda">
+
+        <!-- Komponen 3: Dropdown (select) -->
+        <label for="matkul">Mata Kuliah</label>
+        <select id="matkul">
+          <option value="">-- Pilih mata kuliah --</option>
+          <option>Algoritma &amp; Pemrograman</option>
+          <option>Basis Data</option>
+          <option>Jaringan Komputer</option>
+          <option>Matematika Diskrit</option>
+        </select>
+
+        <div class="grid">
+          <div>
+            <label for="tugas">Nilai Tugas (0-100)</label>
+            <input type="text" id="tugas" inputmode="decimal">
+          </div>
+          <div>
+            <label for="uts">Nilai UTS (0-100)</label>
+            <input type="text" id="uts" inputmode="decimal">
+          </div>
+          <div>
+            <label for="uas">Nilai UAS (0-100)</label>
+            <input type="text" id="uas" inputmode="decimal">
+          </div>
+          <div>
+            <label for="hadir">Hadir (dari 14 pertemuan)</label>
+            <input type="text" id="hadir" inputmode="numeric">
+          </div>
+        </div>
+
+        <!-- Komponen 4: Checkbox -->
+        <label class="cek">
+          <input type="checkbox" id="izin">
+          Memiliki surat izin / dispensasi (toleransi kehadiran)
+        </label>
+
+        <!-- Pesan validasi -->
+        <p id="pesanError" class="error" role="alert" hidden></p>
+
+        <!-- Komponen 5: Tombol -->
+        <div class="tombol">
+          <button type="submit" id="btnHitung" class="utama">Hitung</button>
+          <button type="button" id="btnReset" class="abu">Reset</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Output hasil pada form -->
+    <section class="hasil" aria-live="polite">
+      <h2>Hasil Penilaian</h2>
+      <p><span>Nama</span>: <b id="outNama">-</b></p>
+      <p><span>Mata Kuliah</span>: <b id="outMatkul">-</b></p>
+      <p><span>Nilai Akhir</span>: <b id="outNilai">-</b></p>
+      <p><span>Kehadiran</span>: <b id="outHadir">-</b></p>
+      <p class="status" id="outStatus">STATUS : -</p>
+    </section>
+
+    <!-- Komponen 6: Daftar riwayat -->
+    <section>
+      <h2>Riwayat Penilaian</h2>
+      <ul id="riwayat" class="riwayat"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

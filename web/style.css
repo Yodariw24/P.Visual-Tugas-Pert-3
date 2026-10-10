@@ -1,0 +1,176 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 12px;
+  background: #eef2f7;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1c2733;
+}
+
+.app {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 16px;
+  padding: 14px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #fff;
+  background: #1f4e79;
+  border-radius: 8px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+fieldset {
+  border: 1px solid #c5d0dc;
+  border-radius: 8px;
+  padding: 14px 16px 16px;
+  background: #fff;
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 0.85rem;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #b4c0cd;
+  border-radius: 6px;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: 2px solid #1f4e79;
+  outline-offset: 1px;
+}
+
+input.salah,
+select.salah {
+  border-color: #c62828;
+  background: #fff5f5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+
+.cek {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.error {
+  margin: 12px 0 0;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  color: #8e1b1b;
+  background: #fdecec;
+  border-left: 4px solid #c62828;
+  border-radius: 4px;
+}
+
+.tombol {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.utama { background: #1f4e79; }
+button.abu   { background: #8d8d8d; }
+button:hover { filter: brightness(1.1); }
+
+.hasil {
+  margin: 16px 0;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #c5d0dc;
+  border-radius: 8px;
+}
+
+.hasil p {
+  margin: 4px 0;
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.hasil span {
+  display: inline-block;
+  width: 110px;
+}
+
+.status {
+  margin-top: 10px !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 700;
+}
+
+.status.lulus   { color: #1b8a3a; }
+.status.remedial { color: #d98200; }
+.status.gagal   { color: #c62828; }
+
+.riwayat {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #c5d0dc;
+  border-radius: 8px;
+}
+
+.riwayat li {
+  padding: 7px 12px;
+  font-family: Consolas, monospace;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #e6ecf2;
+}
+
+.riwayat li:last-child { border-bottom: 0; }
+
+.riwayat:empty::before {
+  content: "Belum ada data.";
+  display: block;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}
